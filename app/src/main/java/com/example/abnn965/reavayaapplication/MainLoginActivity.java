@@ -9,20 +9,34 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainLoginActivity extends AppCompatActivity {
+
+    private EditText accNumber;
+    private EditText password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
 
+        accNumber = (EditText) findViewById(R.id.edtAccountNumber);
+        password = (EditText) findViewById(R.id.edtPassword);
     }
 
     public void onClickLogin(View view){
 
-        Intent loginIntent = new Intent(MainLoginActivity.this, HomeActivity.class);
-        startActivity(loginIntent);
+        if(accNumber.getText().toString().equals("123456789") && password.getText().toString().equals("12345")) {
+            Intent loginIntent = new Intent(MainLoginActivity.this, HomeActivity.class);
+            startActivity(loginIntent);
+            Toast.makeText(this, "Login Successful!", Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(this, "Account Number and Password don't match", Toast.LENGTH_LONG).show();
+        }
+
     }
 
     @Override

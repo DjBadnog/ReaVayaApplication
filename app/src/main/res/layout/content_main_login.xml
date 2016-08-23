@@ -18,33 +18,35 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/edtAccountNumber"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#fff"
         android:hint="Account Number"
         android:textColorHint="#fff"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="#fff" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
+        android:id="@+id/edtPassword"
+        android:layout_below="@+id/edtAccountNumber"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:textColorHint="#fff"
         android:hint="Password"
-        android:backgroundTint="#fff" />
+        android:backgroundTint="#fff"
+        android:textColor="#fff" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
         android:id="@+id/btnLogin"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/edtPassword"
         android:layout_centerHorizontal="true"
         android:background="#E1351F"
         android:onClick="onClickLogin" />
