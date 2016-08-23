@@ -21,6 +21,8 @@ public class MainLoginActivity extends AppCompatActivity {
 
     public void onClickLogin(View view){
 
+        Intent loginIntent = new Intent(MainLoginActivity.this, HomeActivity.class);
+        startActivity(loginIntent);
     }
 
     @Override
