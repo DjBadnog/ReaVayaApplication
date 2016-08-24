@@ -1,6 +1,8 @@
 package com.example.abnn965.reavayaapplication;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +16,9 @@ import android.widget.Toast;
 
 public class MainLoginActivity extends AppCompatActivity {
 
+    SQLiteDatabase myDb;
+    DatabaseHelper dbH;
+
     private EditText accNumber;
     private EditText password;
 
@@ -22,21 +27,43 @@ public class MainLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
 
+        dbH = new DatabaseHelper(this);
+
         accNumber = (EditText) findViewById(R.id.edtAccountNumber);
         password = (EditText) findViewById(R.id.edtPassword);
     }
 
     public void onClickLogin(View view){
 
-        if(accNumber.getText().toString().equals("123456789") && password.getText().toString().equals("12345")) {
-            Intent loginIntent = new Intent(MainLoginActivity.this, HomeActivity.class);
-            startActivity(loginIntent);
-            Toast.makeText(this, "Login Successful!", Toast.LENGTH_LONG).show();
-        }
-        else{
-            Toast.makeText(this, "Account Number and Password don't match", Toast.LENGTH_LONG).show();
-        }
 
+        final String TABLE_NAME = " customer_table";
+        String selectQuery = "SELECT * FROM " + TABLE_NAME;
+        myDb = dbH.getReadableDatabase();
+        Cursor cursor = myDb.rawQuery(selectQuery, null);
+
+        while(cursor.moveToNext()){
+            String id = cursor.getString(0);
+            String name = cursor.getString(1);
+            String surname = cursor.getString(2);
+            String cellnumber = cursor.getString(3);
+            String accountnumber = cursor.getString(4);
+            String password_db = cursor.getString(5);
+            String email = cursor.getString(6);
+
+            if (accNumber.getText().toString().equals(accountnumber) && password.getText().toString().equals(password_db)){
+                Intent loginIntent = new Intent(MainLoginActivity.this, HomeActivity.class);
+                startActivity(loginIntent);
+                Toast.makeText(this, "Login Successful!", Toast.LENGTH_LONG).show();
+            }else{
+                Toast.makeText(this, "Account Number and Password don't match", Toast.LENGTH_LONG).show();
+            }
+        }cursor.close();
+
+    }
+
+    public void onClickRegister(View view){
+        Intent registerIntent = new Intent(MainLoginActivity.this, RegisterActivity.class);
+        startActivity(registerIntent);
     }
 
     @Override

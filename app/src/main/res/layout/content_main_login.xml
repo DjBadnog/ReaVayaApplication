@@ -63,4 +63,16 @@
         android:layout_marginTop="44dp"
         android:background="@drawable/logo"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/btnRegisterActivity"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/btnLogin"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gradient_button_bg_color"
+        android:textColor="#fff"
+        android:onClick="onClickRegister" />
+
 </RelativeLayout>
