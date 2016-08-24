@@ -48,8 +48,11 @@
         android:id="@+id/btnLogin"
         android:layout_below="@+id/edtPassword"
         android:layout_centerHorizontal="true"
-        android:background="#E1351F"
-        android:onClick="onClickLogin" />
+        android:background="@drawable/gradient_button_bg_color"
+        android:onClick="onClickLogin"
+        android:layout_marginTop="20dp"
+        android:textColor="#fff" />
+    <!--#E1351F"-->
 
     <ImageView
         android:layout_width="wrap_content"

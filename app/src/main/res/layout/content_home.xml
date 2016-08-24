@@ -29,7 +29,9 @@
         android:layout_below="@+id/imageView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="36dp" />
+        android:layout_marginTop="36dp"
+        android:background="@drawable/gradient_button_bg_color"
+        android:textColor="#fff" />
 
     <Button
         android:layout_width="match_parent"
@@ -37,7 +39,10 @@
         android:text="Next Bus"
         android:id="@+id/btnNextBus"
         android:layout_below="@+id/btnTopUp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gradient_button_bg_color"
+        android:layout_marginTop="10dp"
+        android:textColor="#fff" />
 
     <Button
         android:layout_width="match_parent"
@@ -45,7 +50,10 @@
         android:text="Nearest Bus Terminal"
         android:id="@+id/button2"
         android:layout_below="@+id/btnNextBus"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gradient_button_bg_color"
+        android:layout_marginTop="10dp"
+        android:textColor="#fff" />
 
     <Button
         android:layout_width="match_parent"
@@ -53,7 +61,10 @@
         android:text="New Button"
         android:id="@+id/button3"
         android:layout_below="@+id/button2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gradient_button_bg_color"
+        android:layout_marginTop="10dp"
+        android:textColor="#fff" />
 
     <Button
         android:layout_width="match_parent"
@@ -61,5 +72,8 @@
         android:text="New Button"
         android:id="@+id/button4"
         android:layout_below="@+id/button3"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gradient_button_bg_color"
+        android:layout_marginTop="10dp"
+        android:textColor="#fff" />
 </RelativeLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- The item -->
+    <item>
+        <!-- The shape -->
+        <shape>
+            <!-- The gradient for displaying different colors on the final activity -->
+            <gradient android:angle="90"
+                android:startColor="#D50000"
+                android:centerColor="#D50000"
+                android:endColor="#D50000"
+                android:type="linear"/>
+            <corners android:radius="3dp"/>
+            <stroke  android:width="6px"
+                android:color="#FFFFFF"/>
+        </shape>
+    </item>
+</selector>
